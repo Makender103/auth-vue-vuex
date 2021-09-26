@@ -17,10 +17,10 @@ import BarraNotLogedIn from './BarraNotLogedIn.vue'
 
  export default {
   components: { BarraLogedIn, BarraNotLogedIn },
-   computed: {
-     usuarioestaLogado () {
-       return Boolean(this.$store.state.token)
-     }
-   }
+  computed: { 
+    usuarioestaLogado () {
+      return this.$store.getters.usuarioEstaLogado
+    }
+  }
  }
  </script>
