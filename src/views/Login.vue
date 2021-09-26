@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     data() {
         return {
@@ -38,13 +37,8 @@ export default {
     },
     methods: {
         efetuarLogin () {
-            axios.post('http://localhost:8000/auth/login', this.usuario)
-                .then(response =>  {
-                    console.log(response)
-                    localStorage.setItem('token', response.data.access_token)
-                    this.$router.push({ name: 'gerentes'})
-                })
-                .catch(erro => console.log(erro))
+            this.$store.dispatch('efetuarLogin', this.usuario)
+            .then( ()=> this.$router.push({name: 'gerentes'}))
         }
     }
 }
