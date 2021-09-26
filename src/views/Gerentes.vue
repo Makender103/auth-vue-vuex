@@ -21,9 +21,13 @@ export default {
     }
   },
   mounted() {
+    // if (!this.$store.state.token) {
+    //   this.$router.push({name: 'login'})
+    // }
     this.$http.get('gerentes')
     .then(response => this.gerentes = response.data)
     .catch(erro =>console.log(erro))
+
   }
 }
 </script>

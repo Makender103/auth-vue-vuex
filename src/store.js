@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-import http from '@http'
+import http from '@/http'
 
 Vue.use(Vuex)
 const state = {
